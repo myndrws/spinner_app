@@ -13,6 +13,16 @@ body{
 	min-height: 100vh;
 	background: #00beac;
 }
+
+.total_container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	min-height: 100vh;
+	background: #00beac;
+}
+
 .container{
 	height: 350px;
 	width: 350px;
@@ -71,7 +81,7 @@ body{
 	position: absolute;
 	background: #008276;
 }
-#spin{
+.spinner_btn{
 	height: 60px;
 	width: 200px;
 	background: #4ed4c6;
@@ -86,10 +96,10 @@ body{
 	box-shadow: 0 5px 10px gray;
 	transition: 0.2s all;
 }
-#spin:hover{
+.spinner_btn:hover{
 	box-shadow: none;
 }
-.stoper{
+.stopper{
 	height: 50px;
 	width: 40px;
 	background: #ffd600;
