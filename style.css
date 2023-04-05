@@ -33,6 +33,7 @@ body{
 	box-shadow: 0 0 10px gray;
 	transition: 3s all;
 }
+
 .container div{
 	height: 50%;
 	width: 200px;
