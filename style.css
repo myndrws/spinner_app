@@ -98,6 +98,7 @@ body{
 	transition: 0.2s all;
 }
 .spinner_btn:hover{
+	background: #1d655e;
 	box-shadow: none;
 }
 .stopper{
@@ -108,6 +109,99 @@ body{
 	clip-path: polygon(100% 0,50% 100%, 0 0);
 	margin-top: -350px;
 }
+
+/* https://www.codingnepalweb.com/tags-input-box-html-javascript/ */
+
+::selection{
+  color: #4ed4c6;
+  background: #4ed4c6;
+}
+.wrapper{
+  width: 496px;
+  background: #4ed4c6;
+  border-radius: 10px;
+  padding: 18px 25px 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.06);
+}
+.wrapper :where(.title, li, li i, .remove){
+  display: flex;
+  align-items: center;
+}
+.title img{
+  max-width: 21px;
+}
+.title h2{
+  font-size: 21px;
+  font-weight: 600;
+  margin-left: 8px;
+}
+.wrapper .content{
+  margin: 10px 0;
+}
+.content p{
+  font-size: 15px;
+}
+
+.content ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  margin: 12px 0;
+  border-radius: 5px;
+}
+
+.content ul  li{
+  color: #333;
+  margin: 4px 3px;
+  list-style: none;
+  border-radius: 5px;
+  background: #baf4ee;
+  padding: 5px 8px 5px 10px;
+  border: 3px solid #008276;
+}
+.content ul li i{
+  height: 20px;
+  width: 20px;
+  color: black;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #4ed4c6;
+  justify-content: center;
+}
+.content ul input{
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.wrapper .remove{
+  justify-content: space-between;
+}
+.remove button{
+	outline: none;
+	font-size: 20px;
+	padding: 9px 15px;
+	border-radius: 5px;
+	height: 60px;
+	width: 200px;
+	background: #4ed4c6;
+	color: white;
+	font-weight: 1000;
+	letter-spacing: 4px;
+	border: 1px solid white;
+	cursor: pointer;
+	box-shadow: 0 5px 10px gray;
+	transition: 0.2s all;
+}
+.remove button:hover{
+	background: #1d655e;
+	box-shadow: none;
+}
+
+
 
 
 
