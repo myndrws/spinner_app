@@ -5,7 +5,17 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
 body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	min-height: 100vh;
+	background: #00beac;
+}
+
+.spinner_mega{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -116,14 +126,14 @@ body{
   color: #4ed4c6;
   background: #4ed4c6;
 }
-.wrapper{
+.tags_wrapper{
   width: 496px;
   background: #4ed4c6;
   border-radius: 10px;
   padding: 18px 25px 20px;
   box-shadow: 0 0 30px rgba(0,0,0,0.06);
 }
-.wrapper :where(.title, li, li i, .remove){
+.tags_wrapper :where(.title, li, li i, .remove){
   display: flex;
   align-items: center;
 }
@@ -135,7 +145,7 @@ body{
   font-weight: 600;
   margin-left: 8px;
 }
-.wrapper .content{
+.tags_wrapper .content{
   margin: 10px 0;
 }
 .content p{
@@ -155,7 +165,7 @@ body{
   margin: 4px 3px;
   list-style: none;
   border-radius: 5px;
-  background: #baf4ee;
+  background: #ffd600;
   padding: 5px 8px 5px 10px;
   border: 3px solid #008276;
 }
@@ -167,7 +177,7 @@ body{
   font-size: 12px;
   cursor: pointer;
   border-radius: 50%;
-  background: #4ed4c6;
+  background: white;
   justify-content: center;
 }
 .content ul input{
@@ -177,7 +187,7 @@ body{
   outline: none;
   font-size: 16px;
 }
-.wrapper .remove{
+.tags_wrapper .remove{
   justify-content: space-between;
 }
 .remove button{
