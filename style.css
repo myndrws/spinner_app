@@ -86,6 +86,7 @@ body{
 	background: #4ed4c6;
 	transform: rotate(300deg);
 }
+
 .mid{
 	height: 30px;
 	width: 30px;
@@ -179,6 +180,11 @@ body{
   margin: 12px 0;
   border-radius: 5px;
 }
+
+.cross{
+	content:'&times'
+}
+
 
 .content ul  li{
   color: #333;

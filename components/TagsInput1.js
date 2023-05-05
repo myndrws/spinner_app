@@ -5,7 +5,7 @@ input = document.querySelector("input"),
 tagNumb = document.querySelector(".remove span");
 
 let maxTags = 20,
-tags = ["Amy", "Someone else"];
+tags = ["p1", "p2", "p3", "p4"];
 
 countTags();
 createTag();
@@ -26,6 +26,7 @@ function createTag(){
 
 function remove(element, tag){
     let index  = tags.indexOf(tag);
+    deleteSegment(index);
     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
     element.parentElement.remove();
     countTags();
@@ -42,8 +43,10 @@ function addTag(e){
                 });
             }
         }
+        addSegment(e.target.value)
         e.target.value = "";
     }
+
 }
 
 input.addEventListener("keyup", addTag);

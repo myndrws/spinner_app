@@ -8,7 +8,8 @@
     <title>Work Roulette</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+	<script src='Winwheel.js'></script>
 	<title>Lucky Spin</title>
 </head>
 
@@ -18,17 +19,10 @@
 
 <div class="total_container" id="first_spin_tag_block">
 
-	<div class="stopper"></div>
-
-	<div class="container" id="name_spinner">
-		<div class="one">Like</div>
-		<div class="two">Comment</div>
-		<div class="three">Share</div>
-		<div class="four">Subscribe</div>
-		<div class="five">Support</div>
-		<div class="six">Visit</div>
-		<span class="mid"></span>
-	</div>
+	<canvas id='canvas' width='880' height='300'>
+            Canvas not supported, use another browser.
+    </canvas>
+    <script src='segmented_spin_wheel.js'></script>
 
 	<div class="tags_wrapper">
       <div class="title">
