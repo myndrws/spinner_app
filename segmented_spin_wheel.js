@@ -2,11 +2,17 @@ let theWheel = new Winwheel({
         'numSegments' : 4,
         'segments'    :
         [
-            {'fillStyle' : '#eae56f', 'text' : 'p1'},
-            {'fillStyle' : '#89f26e', 'text' : 'p2'},
-            {'fillStyle' : '#7de6ef', 'text' : 'p3'},
-            {'fillStyle' : '#e7706f', 'text' : 'p4'}
-        ]
+            {'fillStyle' : '#4ed4c6', 'text' : 'Amy'},
+            {'fillStyle' : '#4ed4c6', 'text' : 'p2'},
+            {'fillStyle' : '#4ed4c6', 'text' : 'p3'},
+            {'fillStyle' : '#4ed4c6', 'text' : 'p4'}
+        ],
+        'animation' :                   // Note animation properties passed in constructor parameters.
+    {
+        'type'     : 'spinToStop',  // Type of animation.
+        'duration' : 8,             // How long the animation is to take in seconds.
+        'spins'    : 10              // The number of complete 360 degree rotations the wheel is to do.
+    }
     });
 
 function addSegment(text_value)
@@ -24,11 +30,17 @@ function addSegment(text_value)
     theWheel.draw();
 }
 
-function deleteSegment(index)
+function deleteSegment(value)
 {
+    // Call function to remove a segment from the wheel
+    // if in the value passed in is equal to the segment text value
+    for (let i = 1; i <= theWheel.numSegments; i++) {
+      if (theWheel.segments[i].text === value) theWheel.deleteSegment(i);
+    }
+
     // Call function to remove a segment from the wheel, by default the last one will be
     // removed; you can pass in the number of the segment to delete if desired.
-    theWheel.deleteSegment(index);
+    // theWheel.deleteSegment(right_index);
 
     // The draw method of the wheel object must be called to render the changes.
     theWheel.draw();

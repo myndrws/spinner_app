@@ -1,5 +1,4 @@
-<!-- wheel based on https://codepen.io/Codenath/pen/MWQwMOd -->
-<!-- tags based on https://www.codingnepalweb.com/tags-input-box-html-javascript/  -->
+<!-- wheel based on work of http://dougtesting.net/winwheel/refs/class_winwheel -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 	<script src='Winwheel.js'></script>
 	<title>Lucky Spin</title>
 </head>
@@ -22,6 +22,7 @@
 	<canvas id='canvas' width='880' height='300'>
             Canvas not supported, use another browser.
     </canvas>
+    <img id="prizePointer" src="components/basic_pointer.png" alt="V" />
     <script src='segmented_spin_wheel.js'></script>
 
 	<div class="tags_wrapper">
@@ -38,8 +39,7 @@
     <script src="components/TagsInput1.js"></script>
 	</div>
 
-	<button class="spinner_btn" id="spin1">Spin!</button>
-	<script src="script.js"></script>
+	<button class="spinner_btn" id="spin1" onClick="theWheel.startAnimation();">Spin!</button>
 
 	</div>
 

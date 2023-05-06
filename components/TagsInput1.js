@@ -5,7 +5,7 @@ input = document.querySelector("input"),
 tagNumb = document.querySelector(".remove span");
 
 let maxTags = 20,
-tags = ["p1", "p2", "p3", "p4"];
+tags = ["p2", "p3", "p4"];
 
 countTags();
 createTag();
@@ -26,9 +26,9 @@ function createTag(){
 
 function remove(element, tag){
     let index  = tags.indexOf(tag);
-    deleteSegment(index);
     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
     element.parentElement.remove();
+    deleteSegment(tag);
     countTags();
 }
 
@@ -54,6 +54,8 @@ input.addEventListener("keyup", addTag);
 const removeBtn = document.querySelector(".remove button");
 removeBtn.addEventListener("click", () =>{
     tags.length = 0;
+    theWheel.numSegments = 0;
+    theWheel.draw();
     ul.querySelectorAll("li").forEach(li => li.remove());
     countTags();
 });
