@@ -1,14 +1,16 @@
 /* https://www.codingnepalweb.com/tags-input-box-html-javascript/ */
 
-const ul = document.querySelector("ul"),
-input = document.querySelector("input"),
-tagNumb = document.querySelector(".remove span");
+const ul = document.querySelector("#input_names_ul"),
+input = document.querySelector("#input_names"),
+tagNumb = document.querySelector("#remove_all_names span"),
+removeBtn = document.querySelector("#remove_all_names_btn");
 
 let maxTags = 20,
-tags = ["p2", "p3", "p4"];
+tags = ["Amy", "p2", "p3", "p4"];
 
 countTags();
 createTag();
+input.addEventListener("keyup", addTag);
 
 function countTags(){
     input.focus();
@@ -18,17 +20,18 @@ function countTags(){
 function createTag(){
     ul.querySelectorAll("li").forEach(li => li.remove());
     tags.slice().reverse().forEach(tag =>{
-        let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove(this, '${tag}')"></i></li>`;
+        let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove_tag_seg(this, '${tag}')"></i></li>`;
         ul.insertAdjacentHTML("afterbegin", liTag);
     });
     countTags();
 }
+/* end of functions used by both tagging boxes */
 
-function remove(element, tag){
+function remove_tag_seg(element, tag){
     let index  = tags.indexOf(tag);
     tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
     element.parentElement.remove();
-    deleteSegment(tag);
+    deleteSegment(theWheel, tag);
     countTags();
 }
 
@@ -36,22 +39,19 @@ function addTag(e){
     if(e.key == "Enter"){
         let tag = e.target.value.replace(/\s+/g, ' ');
         if(tag.length > 1 && !tags.includes(tag)){
-            if(tags.length < 10){
+            if(tags.length < maxTags){
                 tag.split(',').forEach(tag => {
                     tags.push(tag);
                     createTag();
+                    addSegment(theWheel, e.target.value, tags.indexOf(tag));
                 });
             }
         }
-        addSegment(e.target.value)
         e.target.value = "";
     }
 
 }
 
-input.addEventListener("keyup", addTag);
-
-const removeBtn = document.querySelector(".remove button");
 removeBtn.addEventListener("click", () =>{
     tags.length = 0;
     theWheel.numSegments = 0;

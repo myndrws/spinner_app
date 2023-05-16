@@ -1,56 +1,60 @@
 /* https://www.codingnepalweb.com/tags-input-box-html-javascript/ */
 
-const ul = document.querySelector("ul"),
-input = document.querySelector("input"),
-tagNumb = document.querySelector(".remove span");
+const ul2 = document.querySelector("#input_things_ul"),
+input2 = document.querySelector("#input_things"),
+tagNumb2 = document.querySelector("#remove_all_things span"),
+removeBtn2 = document.querySelector("#remove_all_things_btn");
 
-let maxTags = 20,
-tags = ["Amy", "Someone else"];
+let maxTags2 = 20,
+tags2 = ["doc1", "doc2", "doc3", "doc4"];
 
-countTags();
-createTag();
+countTags2();
+createTag2();
+input2.addEventListener("keyup", addTag2);
 
-function countTags(){
-    input.focus();
-    tagNumb.innerText = maxTags - tags.length;
+function countTags2(){
+    input2.focus();
+    tagNumb2.innerText = maxTags2 - tags2.length;
 }
 
-function createTag(){
-    ul.querySelectorAll("li").forEach(li => li.remove());
-    tags.slice().reverse().forEach(tag =>{
-        let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove(this, '${tag}')"></i></li>`;
-        ul.insertAdjacentHTML("afterbegin", liTag);
+function createTag2(){
+    ul2.querySelectorAll("#input_things_ul li").forEach(li => li.remove());
+    tags2.slice().reverse().forEach(tag =>{
+        let liTag = `<li>${tag} <i class="uit uit-multiply" onclick="remove_tag_seg2(this, '${tag}')"></i></li>`;
+        ul2.insertAdjacentHTML("afterbegin", liTag);
     });
-    countTags();
+    countTags2();
 }
 
-function remove(element, tag){
-    let index  = tags.indexOf(tag);
-    tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+function remove_tag_seg2(element, tag){
+    let index  = tags2.indexOf(tag);
+    tags2 = [...tags2.slice(0, index), ...tags2.slice(index + 1)];
     element.parentElement.remove();
-    countTags();
+    deleteSegment(theWheel2, tag);
+    countTags2();
 }
 
-function addTag(e){
-    if(e.key == "Enter"){
-        let tag = e.target.value.replace(/\s+/g, ' ');
-        if(tag.length > 1 && !tags.includes(tag)){
-            if(tags.length < 10){
-                tag.split(',').forEach(tag => {
-                    tags.push(tag);
-                    createTag();
+function addTag2(e2){
+    if(e2.key == "Enter"){
+        let tag2 = e2.target.value.replace(/\s+/g, ' ');
+        if(tag2.length > 1 && !tags2.includes(tag2)){
+            if(tags2.length < maxTags2){
+                tag2.split(',').forEach(tag2 => {
+                    tags2.push(tag2);
+                    createTag2();
+                    addSegment(theWheel2, e2.target.value, tags2.indexOf(tag2));
                 });
             }
         }
-        e.target.value = "";
+        e2.target.value = "";
     }
+
 }
 
-input.addEventListener("keyup", addTag);
-
-const removeBtn = document.querySelector(".remove button");
-removeBtn.addEventListener("click", () =>{
-    tags.length = 0;
-    ul.querySelectorAll("li").forEach(li => li.remove());
-    countTags();
+removeBtn2.addEventListener("click", () =>{
+    tags2.length = 0;
+    theWheel2.numSegments = 0;
+    theWheel2.draw();
+    ul2.querySelectorAll("#input_things_ul li").forEach(li => li.remove());
+    countTags2();
 });

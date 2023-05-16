@@ -185,7 +185,6 @@ body{
 	content:'&times'
 }
 
-
 .content ul  li{
   color: #333;
   margin: 4px 3px;
@@ -248,15 +247,18 @@ body{
 	font-size: 20px;
 	font-family: monospace;
 	font-weight: 1000;
-	color:#008276;
 	 writing-mode: vertical-rl;
-
 }
 
-#prizePointer {
-    position: absolute;
-    left: 500px;
-    top: 10px;
+#theWheel {
+	box-shadow: 0 0 10px gray;
+}
+
+.prizePointer {
+    left: 20%;
+    top: 1%;
+	max-width: 15%;
+	max-height: 15%;
     z-index: 999;
 }
 
