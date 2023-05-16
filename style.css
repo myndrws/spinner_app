@@ -8,36 +8,35 @@
 
 body{
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	overflow: hidden;
-	min-height: 100vh;
+	min-height: 100%;
 	background: #00beac;
 }
 
 .spinner_mega{
 	display: flex;
-	height: 90%;
+	height: 100%;
 	width: 100%;
-	top: 5%;
 	background: #00beac;
 }
 
 .total_container{
 	align-items: center;
 	justify-content: center;
-	min-height: 100%;
+	min-height: 90%;
 	min-width: 50%;
 	background: #00beac;
 	padding: 2%;
+	position: relative;
 }
 
 .spinner_btn{
-	height: 60px;
+	height: 5%;
 	width: 80%;
 	background: #4ed4c6;
-	margin: 5% auto;
-	position: relative;
+	margin: 3% auto;
 	display: flex;
 	justify-content: center;
 	font-size: 30px;
@@ -64,10 +63,11 @@ body{
   width: 80%;
   background: #4ed4c6;
   border-radius: 10px;
-  padding: 18px 25px 20px;
+  padding: 18px 25px 10px;
   box-shadow: 0 0 30px rgba(0,0,0,0.06);
   margin: 0 auto;
-
+	align-items: center;
+	justify-content: center;
 }
 
 .tags_wrapper :where(.title, li, li i, .remove){
@@ -87,11 +87,6 @@ body{
 }
 .tags_wrapper .content{
   margin: 10px 0;
-}
-
-.tags_wrapper {
-	align-items: center;
-	justify-content: center;
 }
 
 .content p{
@@ -162,10 +157,11 @@ body{
 }
 
 canvas {
-    z-index: 1;
-	display: flex;
+	width: 100%;
+	z-index: 1;
 	align-items: center;
 	justify-content: center;
+	padding-bottom: 2%;
 }
 
 #theWheel {
@@ -174,11 +170,43 @@ canvas {
 }
 
 .prizePointer {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 	max-width: 20%;
 	max-height: 20%;
     z-index: 999;
 }
 
+.reset_btn{
+	height: 100%;
+	width: 20%;
+	background: #4ed4c6;
+	margin: 3% auto;
+	display: flex;
+	justify-content: center;
+	font-size: 10px;
+	font-weight: bolder;
+	color: white;
+	letter-spacing: 4px;
+	border: 1px solid white;
+	cursor: pointer;
+	box-shadow: 0 5px 10px gray;
+	transition: 0.2s all;
+}
+
+.reset_btn:hover{
+	background: #1d655e;
+	box-shadow: none;
+}
+
+.reset_btn_div{
+	display: flex;
+	width: 100%;
+	height: 50%;
+	margin: 3% auto;
+}
 
 
 

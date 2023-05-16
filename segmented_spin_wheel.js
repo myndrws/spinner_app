@@ -7,15 +7,15 @@ let theWheel = new Winwheel({
         'segments'    :
         [
             {'fillStyle' : '#4ed4c6', 'text' : 'Amy'},
-            {'fillStyle' : '#baf4ee', 'text' : 'p2'},
-            {'fillStyle' : '#4ed4c6', 'text' : 'p3'},
-            {'fillStyle' : '#baf4ee', 'text' : 'p4'}
+            {'fillStyle' : '#baf4ee', 'text' : 'person_2'},
+            {'fillStyle' : '#4ed4c6', 'text' : 'person_3'},
+            {'fillStyle' : '#baf4ee', 'text' : 'person_4'}
         ],
         'animation' :                   // Note animation properties passed in constructor parameters.
     {
         'type'     : 'spinToStop',  // Type of animation.
         'duration' : 8,             // How long the animation is to take in seconds.
-        'spins'    : 10              // The number of complete 360 degree rotations the wheel is to do.
+        'spins'    : 10            // The number of complete 360 degree rotations the wheel is to do.
     }
     });
 
@@ -52,3 +52,10 @@ function deleteSegment(wheel, value)
     // The draw method of the wheel object must be called to render the changes.
     wheel.draw();
     }
+
+ function resetWheel(wheel)
+{
+    wheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+    wheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+    wheel.draw();                // Call draw to render changes to the wheel.
+}

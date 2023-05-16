@@ -6,7 +6,7 @@ tagNumb = document.querySelector("#remove_all_names span"),
 removeBtn = document.querySelector("#remove_all_names_btn");
 
 let maxTags = 20,
-tags = ["Amy", "p2", "p3", "p4"];
+tags = ["Amy", "person_2", "person_3", "person_4"];
 
 countTags();
 createTag();
