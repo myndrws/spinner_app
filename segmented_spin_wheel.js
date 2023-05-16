@@ -3,6 +3,7 @@ let theWheel = new Winwheel({
         'numSegments' : 4,
         'innerRadius'   : 20,
         'textFontFamily' : 'Courier',
+        'responsive'   : true,
         'segments'    :
         [
             {'fillStyle' : '#4ed4c6', 'text' : 'Amy'},
