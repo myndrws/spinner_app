@@ -7,8 +7,9 @@ let theWheel = new Winwheel({
         'segments'    :
         [
             {'fillStyle' : '#4ed4c6', 'text' : 'Amy'},
-            {'fillStyle' : '#baf4ee', 'text' : 'person_2'},
-            {'fillStyle' : '#4ed4c6', 'text' : 'person_3'}
+            {'fillStyle' : '#baf4ee', 'text' : 'you?'},
+            {'fillStyle' : '#4ed4c6', 'text' : 'me?'},
+            {'fillStyle' : '#baf4ee', 'text' : 'who?'}
         ],
         'animation' :                   // Note animation properties passed in constructor parameters.
     {
