@@ -8,8 +8,7 @@ let theWheel = new Winwheel({
         [
             {'fillStyle' : '#4ed4c6', 'text' : 'Amy'},
             {'fillStyle' : '#baf4ee', 'text' : 'person_2'},
-            {'fillStyle' : '#4ed4c6', 'text' : 'person_3'},
-            {'fillStyle' : '#baf4ee', 'text' : 'person_4'}
+            {'fillStyle' : '#4ed4c6', 'text' : 'person_3'}
         ],
         'animation' :                   // Note animation properties passed in constructor parameters.
     {
@@ -21,9 +20,9 @@ let theWheel = new Winwheel({
 
 function addSegment(wheel, text_value, index)
 {
-    let seg_colour = "#baf4ee";
+    let seg_colour = "#4ed4c6";
     if (index % 2 === 0) {
-        seg_colour = "#4ed4c6";
+        seg_colour = "#baf4ee";
     }
 
     // The Second parameter in the call to addSegment specifies the position,
